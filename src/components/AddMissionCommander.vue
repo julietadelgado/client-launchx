@@ -104,7 +104,6 @@ export default {
       this.missionCommander = {};
     },
     stringToBoolean: function(string){
-    alert(string.toString().toLowerCase())
       switch(string.toString().toLowerCase().trim()){
         case "true": case "yes": case "1": return true;
         case "false": case "no": case "0": case null: return false;
