@@ -4,6 +4,12 @@
       <router-link to="/" class="navbar-brand">LaunchX</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
+          <router-link to="/mission-commanders" class="nav-link">Mission Commanders</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/mission-commanders/add" class="nav-link">Agregar Mission Commander</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/explorers" class="nav-link">Explorers</router-link>
         </li>
         <li class="nav-item">
