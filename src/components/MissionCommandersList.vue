@@ -20,7 +20,9 @@
         <div>
           <br><label><strong>Nombre:</strong></label> {{ currentMissionCommander.name}}
           <br><label><strong>Username:</strong></label> {{ currentMissionCommander.username}}
-          <br><label><strong>Mission:</strong></label> {{ currentMissionCommander.mission}}
+          <br><label><strong>Main Stack:</strong></label> {{ currentMissionCommander.mainStack}}
+          <br><label><strong>Current Enrollment:</strong></label> {{ currentMissionCommander.currentEnrollment}}
+          <br><label><strong>Has Azure certification:</strong></label> {{ currentMissionCommander.hasAzureCertification}}
         </div>
         <router-link :to="'/mission-commander/' + currentMissionCommander.id" class="btn btn-info"> Editar</router-link>
       </div>
