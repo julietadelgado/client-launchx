@@ -38,19 +38,19 @@
       <div class="form-group">
         <label for="title">Current Enrollment</label><br>
         <input type="radio" id="false" value="false" v-model="currentEnrollmentPicked">
-        <label for="false"> False</label>
+        <label for="false">&nbsp;False</label>
         <br>
         <input type="radio" id="true" value="true" v-model="currentEnrollmentPicked">
-        <label for="true"> True</label>
+        <label for="true">&nbsp;True</label>
         <br>
       </div>
       <div class="form-group">
         <label for="title">Has Azure Certification</label><br>
         <input type="radio" id="falseCertification" value="false" v-model="hasAzureCertificationPicked">
-        <label for="falseCertification"> False</label>
+        <label for="falseCertification">&nbsp;False</label>
         <br>
         <input type="radio" id="trueCertification" value="true" v-model="hasAzureCertificationPicked">
-        <label for="trueCertification"> True</label>
+        <label for="trueCertification">&nbsp;True</label>
         <br>
       </div>
       <button @click="saveMissionCommander" class="btn btn-success">Agregar</button>
@@ -87,8 +87,8 @@ export default {
         name: this.missionCommander.name,
         username: this.missionCommander.username,
         mainStack: this.missionCommander.mainStack,
-        currentEnrollment: this.missionCommander.currentEnrollment,
-        hasAzureCertification: this.missionCommander.hasAzureCertification
+        currentEnrollment: this.stringToBoolean(this.currentEnrollmentPicked),
+        hasAzureCertification: this.stringToBoolean(this.hasAzureCertificationPicked)
       };
       MissionCommanderService.create(data)
         .then(response => {
@@ -102,6 +102,14 @@ export default {
     newMissionCommander() {
       this.submitted = false;
       this.missionCommander = {};
+    },
+    stringToBoolean: function(string){
+    alert(string.toString().toLowerCase())
+      switch(string.toString().toLowerCase().trim()){
+        case "true": case "yes": case "1": return true;
+        case "false": case "no": case "0": case null: return false;
+        default: return Boolean(string);
+      }
     }
   }
 };
