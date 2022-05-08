@@ -43,7 +43,6 @@
         <input type="radio" id="true" value="true" v-model="currentEnrollmentPicked">
         <label for="true"> True</label>
         <br>
-        <span>Eligió: {{ currentEnrollmentPicked }}</span>
       </div>
       <div class="form-group">
         <label for="title">Has Azure Certification</label><br>
@@ -53,7 +52,6 @@
         <input type="radio" id="trueCertification" value="true" v-model="hasAzureCertificationPicked">
         <label for="trueCertification"> True</label>
         <br>
-        <span>Eligió: {{ hasAzureCertificationPicked }}</span>
       </div>
       <button @click="saveMissionCommander" class="btn btn-success">Agregar</button>
     </div>
